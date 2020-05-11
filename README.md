@@ -1,7 +1,7 @@
 
 
 # abap-index
-Hierarchical index of all topics for ABAP programming language
+Hierarchical index of all topics for ABAP programming language. Based on official ABAP [keyword documentation](https://help.sap.com/doc/abapdocu_754_index_htm/7.54/en-US/index.htm). List is not complete yet, update in progress.
 
 # ABAP - Dictionary
 ## 1. Classic objects in ABAP Dictionary
@@ -232,128 +232,211 @@ Hierarchical index of all topics for ABAP programming language
 
 # ABAP − Reference
 ## 1. ABAP Syntax
--   ABAP statements
-	- ABAP words
-	- Operands
-		- Names for operands
-			- Structure Component Selector
-			- Object Component Selector
-			- Class Component Selector
-			- Interface Component Selector
-			- Dereferencing Operator
-			- Chainings
-		- Escape character for names
-		- Specifying operands
-			- Static Specification
-			- Specifying Names Dynamically in Parentheses
-			- Specifying Names Dynamically
-		- Operand type
-			- Operand Positions for Elementary Data Objects
-			- Operand Positions for Structures
-			- Operand Positions for Internal Tables
-			- Operand Positions for Reference Variables
-		- Data objects in operand positions
-			- Read positions
-			- Write positions
-			- Subfield access (Substrings)
-		- Functions and expressions in operand positions
-			- Functions and Expressions for Operand Positions
-				- Writing Positions
-				- Reading Positions
-			- Operand Positions for Functions and Expressions
-				- Writer Positions
-					- Declaration Positions
-						- Positions for the inline declaration of variables
-							- Left side of an assignment with the assignment operator =
-							- Actual parameters for output parameters and return values of methods for standalone method calls
-							- Target fields when catching an exception
-							- Target fields in statements for string processing and byte string processing
-							- Target fields in statements for time stamps
-							- Target fields in statements for internal tables
-							- Target fields of the ABAP SQL statement SELECT
-							- Target fields of the statement DESCRIBE
-							- Target fields of various GET statements
-							- Work area in statement for dynpros
-							- Target field for message output
-							- Target fields in file interface statements
-							- Target field for a serialization
-							- All writing positions used when generating programs
-						- Positions for the inline declaration of field symbols
-							- Field symbol in the statement ASSIGN
-							- Field symbols in statements for internal tables
-					- Result Positions
-						- Left side of an assignment with the assignment operator =
-						- Operand dobj of the statement CLEAR
-						- Memory area mem_area of the statement ASSIGN mem_area TO
-						- Structure struc of the statement ASSIGN COMPONENT comp OF STRUCTURE struc
-						- Actual parameter in method calls for output parameters, input/output parameters, and return values
-						- The right side in the declaration of a local field symbol in a LET expression
-				- Reader Positions
-					- General Expression Positions
-						- Right side of an assignment with the assignment operator =
-						- Operands of arithmetic expressions and of bit expressions
-						- Embedded expressions in string templates
-						- Operands of comparison expressions in logical expressions
-						- Operand of the statement CASE
-						- Actual parameters for input parameters of methods in meth( ... ), RAISE EVENT, CREATE OBJECT, and RAISE EXCEPTION or THROW in a conditional expression
-						- Actual parameters for input parameters of function modules in the case of CALL FUNCTION
-						- Arguments of built-in numeric functions if they are themselves executed in an arithmetic expression
-						- Reference variable oref of statement RAISE EXCEPTION oref.
-						- The operands behind the addition WITH TABLE KEY of the statements READ TABLE itab and DELETE TABLE itab
-						- The operands behind the addition WITH KEY of the statement READ TABLE itab
-						- Work area wa
-						- Expression exp for dynamic sorts
-						- Source fields of the statements WRITE and WRITE TO
-					- Numeric Expression Positions
-						- Arguments of functions
-						- Counters and positions
-						- Positions specified in the statements FIND and REPLACE
-						- The row number idx specified with respect to a table index when accessing an internal table		
-					- Character-Like Expression Positions
-					- Time-Stamp-Like Expression Positions
-					- Functional Operand Positions
-	- Operators
-		- Operators that perform special operations in operand positions
-			- Declaration Operators `DATA | FIELD-SYMBOL`
-			- Constructor Operators `NEW | VALUE | CONV | CORRESPONDING | CAST | REF | EXACT | REDUCE | FILTER | COND | SWITCH`
-		- Operators that join multiple operands in a single expression
-			- Assignment Operators `= | ?= | += | -= | *= | /= | &&=`
-			- Arithmetic Operators `+ | - | * | / | DIV | MOD | **`
-			- Bit Operators `BIT-AND | BIT-OR | BIT-XOR | BIT-NOT`
-			- String Operators `&&`
-			- Relational Operators `= | <> | < | > | <= | >= | BETWEEN`
-			- Boolean Operators `AND | OR | EQUIV | NOT`
-		- Operator that joins two operands in compilations
-			- Literal Operator `&`
-	- Expressions
-		- Writer positions
-			- Declaration expressions
-			- Certain constructor expressions
-			- Certain table expressions
-		- Reader positions
-			- Logical expressions
-			- Constructor expressions
-			- Table expressions and mesh path expressions
-			- Arithmetic expressions
-			- String expressions
-			- Bit expressions
--   Naming conventions
--   Chained statements 
--   Comments  
--   Program directives  
--   Syntax conventions
-## 2. Program Layout
+### 1.1. ABAP statements
+#### 1.1.1. ABAP words
+- ABAP language elements
+- ABAP language element additions
+#### 1.1.2. Operands
+##### 1.1.2.1. Names for operands
+- Structure Component Selector
+- Object Component Selector
+- Class Component Selector
+- Interface Component Selector
+- Dereferencing Operator
+- Chainings
+##### 1.1.2.2. Escape character for names
+`!`
+##### 1.1.2.3. Specifying operands
+- Static Specification
+- Specifying Names Dynamically in Parentheses
+- Specifying Names Dynamically
+##### 1.1.2.4. Operand type
+- Operand Positions for Elementary Data Objects
+- Operand Positions for Structures
+- Operand Positions for Internal Tables
+- Operand Positions for Reference Variables
+##### 1.1.2.5. Data objects in operand positions
+- Read positions
+- Write positions
+- Subfield access (Substrings)
+##### 1.1.2.6. Functions and expressions in operand positions
+###### 1.1.2.6.1. Functions and Expressions for Operand Positions
+- Writing Positions
+- Reading Positions
+###### 1.1.2.6.2. Operand Positions for Functions and Expressions
+- Writer Positions
+	- Declaration Positions
+		- Positions for the inline declaration of variables
+			- Left side of an assignment with the assignment operator =
+			- Actual parameters for output parameters and return values of methods for standalone method calls
+			- Target fields when catching an exception
+			- Target fields in statements for string processing and byte string processing
+			- Target fields in statements for time stamps
+			- Target fields in statements for internal tables
+			- Target fields of the ABAP SQL statement SELECT
+			- Target fields of the statement DESCRIBE
+			- Target fields of various GET statements
+			- Work area in statement for dynpros
+			- Target field for message output
+			- Target fields in file interface statements
+			- Target field for a serialization
+			- All writing positions used when generating programs
+		- Positions for the inline declaration of field symbols
+			- Field symbol in the statement ASSIGN
+			- Field symbols in statements for internal tables
+	- Result Positions
+		- Left side of an assignment with the assignment operator =
+		- Operand dobj of the statement CLEAR
+		- Memory area mem_area of the statement ASSIGN mem_area TO
+		- Structure struc of the statement ASSIGN COMPONENT comp OF STRUCTURE struc
+		- Actual parameter in method calls for output parameters, input/output parameters, and return values
+		- The right side in the declaration of a local field symbol in a LET expression
+- Reader Positions
+	- General Expression Positions
+		- Right side of an assignment with the assignment operator =
+		- Operands of arithmetic expressions and of bit expressions
+		- Embedded expressions in string templates
+		- Operands of comparison expressions in logical expressions
+		- Operand of the statement CASE
+		- Actual parameters for input parameters of methods in meth( ... ), RAISE EVENT, CREATE OBJECT, and RAISE EXCEPTION or THROW in a conditional expression
+		- Actual parameters for input parameters of function modules in the case of CALL FUNCTION
+		- Arguments of built-in numeric functions if they are themselves executed in an arithmetic expression
+		- Reference variable oref of statement RAISE EXCEPTION oref.
+		- The operands behind the addition WITH TABLE KEY of the statements READ TABLE itab and DELETE TABLE itab
+		- The operands behind the addition WITH KEY of the statement READ TABLE itab
+		- Work area wa
+		- Expression exp for dynamic sorts
+		- Source fields of the statements WRITE and WRITE TO
+	- Numeric Expression Positions
+		- Arguments of functions
+		- Counters and positions
+		- Positions specified in the statements FIND and REPLACE
+		- The row number idx specified with respect to a table index when accessing an internal table		
+	- Character-Like Expression Positions
+	- Time-Stamp-Like Expression Positions
+	- Functional Operand Positions
+#### 1.1.3. Operators
+##### 1.1.3.1. Operators that perform special operations in operand positions
+###### 1.1.3.1.1. Declaration Operators 
+`DATA | FIELD-SYMBOL`
+###### 1.1.3.1.1. Constructor Operators 
+`NEW | VALUE | CONV | CORRESPONDING | CAST | REF | EXACT | REDUCE | FILTER | COND | SWITCH`
+##### 1.1.3.2. Operators that join multiple operands in a single expression
+###### 1.1.3.2.1. Assignment Operators 
+`= | ?= | += | -= | *= | /= | &&=`
+###### 1.1.3.2.2. Arithmetic Operators 
+`+ | - | * | / | DIV | MOD | **`
+###### 1.1.3.2.3. Bit Operators 
+`BIT-AND | BIT-OR | BIT-XOR | BIT-NOT`
+###### 1.1.3.2.4. String Operators 
+`&&`
+###### 1.1.3.2.5. Relational Operators 
+`= | <> | < | > | <= | >= | BETWEEN`
+###### 1.1.3.2.6. Boolean Operators 
+`AND | OR | EQUIV | NOT`
+##### 1.1.3.3. Operator that joins two operands in compilations
+`&` Literal Operator
+#### 1.1.4. Expressions
+##### 1.1.4.1. Writer positions
+- Declaration expressions
+- Certain constructor expressions
+- Certain table expressions
+##### 1.1.4.2. Reader positions
+- Logical expressions
+- Constructor expressions
+- Table expressions and mesh path expressions
+- Arithmetic expressions
+- String expressions
+- Bit expressions
+### 1.2. Naming Conventions and Namespaces
+- Naming Conventions
+- Namespaces
+- Reserved Names
+### 1.3. Chained statements 
+`: | ,`
+### 1.4. Comments  
+- Comment lines `*`
+- End of line comments `"`
+### 1.5. Program directives  
+- ABAP Doc
+- Pragmas
+- Pseudo Comments
+## 2. Program Layout [...]
+- ABAP Program Types
+- Introductory Statements for Programs
+- Modularization Statements
 ## 3. Predefined Types, Data Objects, and Functions
+- Predefined Data Types
+- Built-In Data Objects
+- Built-In Functions
+- Constructor Operators for Constructor Expressions
 ## 4. Declarations
+- Declaration Statements
+- Inline Declarations
+- Local Declarations in Expressions
+- Typing
 ## 5. Creating Objects and Values
+- CREATE DATA
+- CREATE OBJECT
+- NEW - Instance Operator
+- VALUE - Value Operator
+- Shared Objects
+- Parameters in the User Memory
 ## 6. Calling and Exiting Program Units
+- Calling Programs
+- Calling Processing Blocks
+- Exiting Program Units
 ## 7. Controlling the Program Flow
+- Expressions and Functions for Conditions
+- Control Structures
+- Exception Handling
+- Conditional Expressions
+- Iteration Expressions
 ## 8. Processing Internal Data
+- Assignments
+- Numeric Calculations
+- Character String and Byte String Processing
+- Date and Time Processing
+- Structures
+- Enumerated Objects
+- Internal Tables
+- Meshes
+- Attributes of Data Objects
+- Streaming
 ## 9. Processing External Data
+- ABAP Database Access  
+- Data Cluster  
+- ABAP File Interface
 ## 10. Text Repositories
+- Texts in Text Pools
+- Messages
 ## 11. Language Environment
+- Language Settings  
+- Formatting Settings
 ## 12. Program Processing
+- Testing and Checking Programs  
+- Dynamic Program Editing
 ## 13. Data Interfaces and Communication Interfaces
+- RFC - Remote Function Call
+- ICF - Internet Communication Framework
+- ABAP Channels
+- ADF - ABAP Daemon Framework
+- ABAP and XML
+- ABAP and JSON
+- ABAP and OLE
+- ABAP and Operating System Statements
+- EPP - Extended Passport
+- PCP - Push Channel Protocol
+- Access to the Presentation Server
+- System Class for UUIDs
+- Internal Statement for System Function Call
 ## 14. SAP GUI User Dialogs
+- General Dynpros
+- Selection Screens
+- Classic Lists
+- Conversion Routines
 ## 15. Enhancements
-## 16. Obsolete Language Elements
+- Source Code Enhancements
+- Enhancements Using BAdIs
+## 16. Authorizations
+- AUTHORITY-CHECK
