@@ -361,10 +361,27 @@ Hierarchical index of all topics for ABAP programming language. Based on officia
 - ABAP Doc
 - Pragmas
 - Pseudo Comments
-## 2. Program Layout [...]
-- ABAP Program Types
-- Introductory Statements for Programs
-- Modularization Statements
+## 2. Program Layout
+### 2.1. ABAP Program Types [...]
+- Executable program
+- Class pool
+- Function group
+- Interface pool
+- Module pool
+- Subroutine pool
+- Type group
+### 2.2. Introductory Statements for Programs
+- REPORT  
+- PROGRAM  
+- FUNCTION-POOL  
+- CLASS-POOL  
+- INTERFACE-POOL  
+- TYPE-POOL
+### 2.3. Modularization Statements
+- Procedures  
+- Dialog Modules  
+- Event Blocks  
+- Source Code Modules
 ## 3. Predefined Types, Data Objects, and Functions
 - Predefined Data Types
 - Built-In Data Objects
